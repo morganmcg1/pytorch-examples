@@ -1,3 +1,4 @@
-total_epochs: 5
-save_every: 2
-batch_size: 32
+base:
+  total_epochs: 5
+  save_every: 2
+  batch_size: 32
