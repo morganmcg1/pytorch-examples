@@ -95,7 +95,7 @@ def old_main(rank: int, world_size: int, save_every: int, total_epochs: int, bat
 
 # Below is the main function above, but using the hydra decorator
 import hydra
-from omegaconf import DictConfig
+from omegaconf import DictConfig, OmegaConf
 
 @hydra.main(config_path=".", config_name="config.yaml", version_base=None)
 def main(config: DictConfig) -> None:
