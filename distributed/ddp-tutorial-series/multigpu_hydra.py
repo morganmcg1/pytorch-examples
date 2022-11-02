@@ -99,7 +99,8 @@ from omegaconf import DictConfig, OmegaConf
 
 @hydra.main(config_path=".", config_name="config.yaml", version_base=None)
 def main(config: DictConfig) -> None:
-    print(OmegaConf.to_yaml(config))
+    # print(OmegaConf.to_yaml(config))
+    print(config)
     
     old_main(
         rank=config.base.rank,
@@ -131,4 +132,4 @@ if __name__ == "__main__":
     
     world_size = torch.cuda.device_count()
     print(f'world_size: {world_size}')
-    mp.spawn(main, nprocs=world_size)
+    mp.spawn(main, args=(), nprocs=world_size)
