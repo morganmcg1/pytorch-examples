@@ -99,6 +99,8 @@ from omegaconf import DictConfig
 
 @hydra.main(config_path=".", config_name="config.yaml", version_base=None)
 def main(config: DictConfig) -> None:
+    print(OmegaConf.to_yaml(config))
+    
     old_main(
         rank=config.base.rank,
         world_size=config.base.world_size,
