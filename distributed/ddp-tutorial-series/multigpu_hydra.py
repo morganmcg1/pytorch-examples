@@ -100,7 +100,7 @@ from omegaconf import DictConfig
 @hydra.main(config_path=".", config_name="config.yaml", version_base=None)
 def main(config: DictConfig) -> None:
     old_main(
-        rank=config.rank,
+        rank=config.base.rank,
         world_size=config.base.world_size,
         save_every=config.base.save_every,
         total_epochs=config.base.total_epochs,
